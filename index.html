@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SPA Example</title>
+  </head>
+
+  <body>
+    <header id="index-header">
+      <div id="index-title">Youzheng Jia</div>
+      <div id="index-nav-bar">
+        <a href="/">Home</a>
+        <a href="/research">Research</a>
+      </div>
+    </header>
+
+    <div id="index-content">
+      <!-- to be injected -->
+    </div>
+
+    <style>
+      body {
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, "Microsoft YaHei", sans-serif;
+      }
+
+      #index-header {
+        width: 100%;
+        padding: 15px 0px 15px 0px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+      }
+
+      #index-title {
+        font-size: 22px;
+        margin-left: 20px;
+      }
+
+      #index-nav-bar {
+        font-size: 16px;
+        margin-right: 20px;
+      }
+
+      #index-nav-bar > a {
+        margin-right: 25px;
+        color: white;
+        font-size: 18px;
+      }
+
+      #landscape {
+        height: 45vh;
+        width: 100%;
+        background-color: #ccc;
+      }
+
+      a,
+      a:active,
+      a:visited {
+        text-decoration: none;
+        color: #1681ec;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #1681ec;
+      }
+    </style>
+
+    <script src="app.js"></script>
+    <script>
+      function scrollFunction() {
+        var limit = 230;
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > limit) {
+          document.getElementById('index-header').style.backgroundColor = 'rgba(0, 0, 0)';
+        } else {
+          document.getElementById('index-header').style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+        }
+      }
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    </script>
+  </body>
+</html>
