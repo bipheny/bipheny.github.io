@@ -3,9 +3,9 @@ const contentContainer = document.getElementById('index-content');
 function injectContent(route) {
   var htmlPath;
   if (route === '/') {
-    htmlPath = './home.html';
+    htmlPath = './pages/home.html';
   } else {
-    htmlPath = '.' + route + '.html';
+    htmlPath = './pages' + route + '.html';
   }
   fetch(htmlPath)
     .then((response) => response.text())
